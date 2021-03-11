@@ -6,7 +6,7 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:29:00 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/09 19:31:39 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:09:55 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalnum(int ch)
 {
-	if (ft_isalpha(ch) || ft_isdigit(ch))
+	if (ft_isalpha(ch) || ft_isdigit(ch) || ch >= 256)
 		return (42);
 	return (0);
 }

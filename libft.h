@@ -6,7 +6,7 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 10:44:57 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/09 23:07:53 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/11 16:01:47 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _LIBFT_H
 
 #include <stddef.h>
+#include <stdlib.h>
 size_t	ft_strlen(const char *s);
 int	ft_atoi(const char *str);
 int	ft_isalpha(int ch);
@@ -26,5 +27,10 @@ int	ft_isascii(int ch);
 int	ft_strncmp(const char *str1, const char *str2, size_t count);
 char	*ft_strchr(const char *str, int ch);
 char	*ft_strrchr(const char *str, int ch);
-
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+size_t	ft_strlcat(char *dest, char *src, unsigned int size);
+char	*ft_itoa(int n);
+char	*ft_strnstr(const char *big, const char *little, size_t len);
+int	ft_islower(int ch);
+int	ft_isupper(int ch);
 #endif

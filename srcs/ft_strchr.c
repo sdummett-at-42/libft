@@ -6,19 +6,19 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 22:18:37 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/09 22:31:51 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/11 16:19:37 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *str, int ch)
 {
-	if (ch == 0)
-		return ("");
 	while (*str)
 	{
 		if (*str == ch)
 			return ((char *)str);
 		str++;
 	}
+	if (*str == ch)
+		return((char *)str);
 	return (0);
 }

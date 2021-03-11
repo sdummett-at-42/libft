@@ -6,15 +6,15 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:43:14 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/09 12:02:16 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/11 16:04:16 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft.h"
+
 int	ft_isalpha(int ch)
 {
-	if (ch >= 'a' && ch <= 'z')
-		return (1024);
-	if (ch >= 'A' && ch <= 'Z')
-		return (1024);
+	if (ft_isupper(ch) || ft_islower(ch))
+		return (42);
 	return (0);
 }

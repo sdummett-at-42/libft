@@ -6,7 +6,7 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 19:11:51 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/09 19:12:58 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/11 16:11:10 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@ int	ft_tolower(int ch)
 {
 	if (ch >= 'A' && ch <= 'Z')
 		return (ch + 32);
+	if (ch < -1)
+		return (ch + 256);
 	return (ch);
 }

@@ -6,14 +6,14 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:24:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/09 11:31:20 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/11 17:07:49 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+signed long long int	ft_atoi(const char *str)	
 {
-	int	nb;
-	int	sign;
+	long long	nb;
+	int		sign;
 
 	nb = 0;
 	sign = 1;
