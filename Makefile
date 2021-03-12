@@ -6,7 +6,7 @@
 #    By: sdummett <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 14:41:18 by sdummett          #+#    #+#              #
-#    Updated: 2021/03/12 13:51:33 by sdummett         ###   ########.fr        #
+#    Updated: 2021/03/13 00:31:02 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRC = srcs/ft_strlen.c srcs/ft_atoi.c srcs/ft_isalpha.c srcs/ft_tolower.c \
      srcs/ft_isupper.c srcs/ft_islower.c srcs/ft_strjoin.c srcs/ft_split.c \
      srcs/ft_memcpy.c srcs/ft_memset.c srcs/ft_bzero.c srcs/ft_memccpy.c \
      srcs/ft_memmove.c srcs/ft_memchr.c srcs/ft_memcmp.c srcs/ft_strdup.c \
-     srcs/ft_calloc.c
+     srcs/ft_calloc.c srcs/ft_substr.c srcs/ft_strtrim.c srcs/ft_strmapi.c \
+     srcs/ft_putchar_fd.c srcs/ft_putstr_fd.c srcs/ft_putendl_fd.c \
+     srcs/ft_putnbr_fd.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
