@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 19:29:00 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/12 13:10:51 by sdummett         ###   ########.fr       */
+/*   Created: 2021/03/11 22:59:32 by sdummett          #+#    #+#             */
+/*   Updated: 2021/03/12 12:36:21 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_isalnum(int ch)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	if (ft_isalpha(ch) || ft_isdigit(ch))
-		return (42);
-	return (0);
+	int	i;
+
+	i = 0;
+	if (!dst && !src)
+		return (0);
+	if (dst > src)
+		while (len)
+		{
+			*((unsigned char *)dst + len - 1) = *((unsigned char *)src + len - 1);
+			len--;
+		}
+	else
+		while (len)
+		{
+			*((unsigned char *)dst + i) = *((unsigned char *)src + i);
+			len--;
+			i++;
+		}
+	return (dst);
 }

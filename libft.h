@@ -6,7 +6,7 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 10:44:57 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/11 16:01:47 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/12 13:52:18 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,15 @@ char	*ft_itoa(int n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int	ft_islower(int ch);
 int	ft_isupper(int ch);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	**ft_split(char const *s, char c);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *b, size_t len);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memchr(const void *s, int c, size_t n);
+int	ft_memcmp(const void *b1, const void *b2, size_t len);
+char	*ft_strdup(const char *str);
+void	*ft_calloc(size_t nmemb, size_t size);
 #endif

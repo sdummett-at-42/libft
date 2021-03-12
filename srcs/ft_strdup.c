@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/09 19:29:00 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/12 13:10:51 by sdummett         ###   ########.fr       */
+/*   Created: 2021/03/12 13:13:55 by sdummett          #+#    #+#             */
+/*   Updated: 2021/03/12 13:19:36 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	ft_isalnum(int ch)
+char	*ft_strdup(const char *str)
 {
-	if (ft_isalpha(ch) || ft_isdigit(ch))
-		return (42);
-	return (0);
+	int	i;
+	char	*ptr;
+
+	if (!(ptr = malloc(sizeof(char) * ft_strlen(str) + 1)))
+		return (0);
+	i = 0;
+	while (*(str + i))
+	{
+		*(ptr + i) = *(str + i);
+		i++;
+	}
+	*(ptr + i) = 0;
+	return (ptr);
 }
