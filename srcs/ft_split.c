@@ -6,7 +6,7 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:52:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/11 19:48:25 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/13 21:01:28 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ char	**ft_split(char const *s, char c)
 {
 	int	j;
 	char	**strs;
-
+	
+	if (!s)
+		return (0);
 	if (!(strs = malloc(sizeof(char *) * size_strs(s, c) + 1)))
 		return (0);
 	j = 0;
