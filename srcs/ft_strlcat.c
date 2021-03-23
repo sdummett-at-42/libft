@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/10 15:07:57 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/10 20:14:28 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/23 15:30:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 size_t	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	if (size == 0)
 		return (ft_strlen(src));

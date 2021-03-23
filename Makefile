@@ -6,13 +6,13 @@
 #    By: sdummett <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 14:41:18 by sdummett          #+#    #+#              #
-#    Updated: 2021/03/13 11:43:51 by sdummett         ###   ########.fr        #
+#    Updated: 2021/03/23 16:24:17 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc -c
 AR = ar
-ARFLAGS = rc
+ARFLAGS = rcs
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = srcs/ft_strlen.c srcs/ft_atoi.c srcs/ft_isalpha.c srcs/ft_tolower.c \
@@ -33,10 +33,11 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
-	ranlib $(NAME)
 
 %.o: %.c
 	$(CC) -o $@ $< $(CFLAGS)
+
+#bonus:
 
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRC)

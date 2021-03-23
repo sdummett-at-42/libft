@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 19:29:53 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/12 23:18:01 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/23 15:59:50 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	check_charset(unsigned char ch, char const *set)
 {
@@ -41,7 +41,7 @@ size_t	len_of_str(char const *s1, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
+	char			*str;
 	unsigned int	len;
 
 	len = len_of_str(s1, set);

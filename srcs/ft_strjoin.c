@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:35:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/11 18:50:44 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/23 15:57:22 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	sizeof_s1_s2(char const *s1, char const *s2)
 {
@@ -32,10 +32,11 @@ int	sizeof_s1_s2(char const *s1, char const *s2)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	int		i;
 	char	*joined_str;
 
-	if (!(joined_str = malloc(sizeof(char) * sizeof_s1_s2(s1, s2) + 1)))
+	joined_str = malloc(sizeof(char) * sizeof_s1_s2(s1, s2) + 1);
+	if (!joined_str)
 		return (0);
 	i = 0;
 	while (*s1)

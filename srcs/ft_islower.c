@@ -6,11 +6,11 @@
 /*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 16:00:14 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/12 17:22:49 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/23 16:11:35 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	ft_islower(int ch)
 {

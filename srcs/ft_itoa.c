@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:37:47 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/11 12:20:26 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/23 16:18:34 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h" 
 
 int	sizeof_n(int n)
 {
-	int		size;
+	int				size;
 	unsigned int	tmp;
 
 	if (n)
@@ -40,24 +40,25 @@ int	sizeof_n(int n)
 	return (size);
 }
 
-char	*protected_malloc(char *str, int size_n)
+void	protected_malloc(char **str, int size_n)
 {
-	if (!(str = malloc(sizeof(char) * size_n + 1)))
-		return (0);
+	str = malloc(sizeof(char) * size_n + 1);
+	if (!str)
+		return ;
 	str[size_n] = 0;
-	return (str);
 }
 
 char	*ft_itoa(int n)
 {
+	int			size_n;
 	char		*str;
 	long int	tmp;
-	int		size_n;
 
 	str = NULL;
 	tmp = n;
 	size_n = sizeof_n(n) - 1;
-	if (n && (str = protected_malloc(str, sizeof_n(n))))
+	protected_malloc(&str, sizeof_n(n));
+	if (n && str)
 	{
 		if (tmp < 0)
 		{
@@ -70,7 +71,7 @@ char	*ft_itoa(int n)
 			tmp = tmp / 10;
 		}
 	}
-	else if (!n && (str = protected_malloc(str, sizeof_n(n))))
+	else if (!n && str)
 		str[size_n] = '0';
 	else
 		return (0);

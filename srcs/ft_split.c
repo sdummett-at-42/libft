@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:52:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/13 21:01:28 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/23 15:56:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int	size_strs(char const *s, char c)
 {
@@ -41,7 +41,8 @@ char const	*splitcpy(char **strs, char const *s, char c, int j)
 	len = 0;
 	while (!((*s + len) == c) && *(s + len))
 		len++;
-	if (!(strs[j] = malloc(sizeof(char) * len + 1)))
+	strs[j] = malloc(sizeof(char) * len + 1);
+	if (!strs[j])
 		return (0);
 	i = 0;
 	while (!(*s == c) && *s)
@@ -56,12 +57,13 @@ char const	*splitcpy(char **strs, char const *s, char c, int j)
 
 char	**ft_split(char const *s, char c)
 {
-	int	j;
+	int		j;
 	char	**strs;
-	
+
 	if (!s)
 		return (0);
-	if (!(strs = malloc(sizeof(char *) * size_strs(s, c) + 1)))
+	strs = malloc(sizeof(char *) * size_strs(s, c) + 1);
+	if (!strs)
 		return (0);
 	j = 0;
 	while (*s)

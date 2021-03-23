@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sdummett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 09:34:47 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/13 10:15:48 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/23 16:13:11 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -28,5 +28,5 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 			curr = tmp;
 		}
 	}
-		*lst = 0;
+	*lst = 0;
 }
