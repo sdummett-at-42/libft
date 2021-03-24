@@ -6,44 +6,64 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:52:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/23 15:56:13 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/24 16:16:34 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	size_strs(char const *s, char c)
+void	clearmem(char **strs, int j)
 {
-	int	size;
-
-	size = 1;
-	while (*s)
+	while (j)
 	{
-		if (*s == c)
-		{
-			while (*s && *s == c)
-				s++;
-			size++;
-		}
-		else
-			s++;
+		j--;
+		free(strs[j]);
 	}
-	if (*(s - 1) == c)
-		size--;
-	return (size);
+	free(strs);
+}
+
+size_t	size_strs(char const *s, char c)
+{
+	size_t	size;
+
+	if (*s)
+	{
+		size = 1;
+		while ((*s == c) && *s)
+			s++;
+		while (*s)
+		{	
+			if (*s == c)
+			{
+				while (*s && *s == c)
+					s++;
+				size++;
+			}
+			else
+				s++;
+		}
+		if (*(s - 1) == c)
+			size--;
+		return (size);
+	}
+	else
+		return (0);
 }
 
 char const	*splitcpy(char **strs, char const *s, char c, int j)
 {
-	int	i;
-	int	len;
+	unsigned int	i;
+	unsigned int	len;
 
 	len = 0;
-	while (!((*s + len) == c) && *(s + len))
+	while (!(s[len] == c) && s[len])
 		len++;
-	strs[j] = malloc(sizeof(char) * len + 1);
+	strs[j] = calloc(len + 1, sizeof(char));
 	if (!strs[j])
+	{
+		clearmem(strs, j);
 		return (0);
+	}
 	i = 0;
 	while (!(*s == c) && *s)
 	{
@@ -62,7 +82,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-	strs = malloc(sizeof(char *) * size_strs(s, c) + 1);
+	strs = calloc(size_strs(s, c) + 1, sizeof(char *));
 	if (!strs)
 		return (0);
 	j = 0;
@@ -71,6 +91,8 @@ char	**ft_split(char const *s, char c)
 		if (!(*s == c))
 		{
 			s = splitcpy(strs, s, c, j);
+			if (!s)
+				return (0);
 			j++;
 		}
 		else
