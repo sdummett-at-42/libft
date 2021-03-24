@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:37:47 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/23 16:18:34 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/24 11:03:13 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,27 @@ int	sizeof_n(int n)
 	return (size);
 }
 
-void	protected_malloc(char **str, int size_n)
+char	*protected_malloc(char *str, int size_n)
 {
 	str = malloc(sizeof(char) * size_n + 1);
 	if (!str)
-		return ;
+		return (0);
 	str[size_n] = 0;
+	return (str);
+}
+
+void	inttoascii(char *str, long int tmp, int size_n)
+{
+	if (tmp < 0)
+	{
+		tmp = tmp * -1;
+		str[0] = '-';
+	}
+	while (tmp)
+	{
+		str[size_n--] = tmp % 10 + 48;
+		tmp = tmp / 10;
+	}
 }
 
 char	*ft_itoa(int n)
@@ -57,20 +72,9 @@ char	*ft_itoa(int n)
 	str = NULL;
 	tmp = n;
 	size_n = sizeof_n(n) - 1;
-	protected_malloc(&str, sizeof_n(n));
+	str = protected_malloc(str, sizeof_n(n));
 	if (n && str)
-	{
-		if (tmp < 0)
-		{
-			tmp = tmp * -1;
-			str[0] = '-';
-		}
-		while (tmp)
-		{
-			str[size_n--] = tmp % 10 + 48;
-			tmp = tmp / 10;
-		}
-	}
+		inttoascii(str, tmp, size_n);
 	else if (!n && str)
 		str[size_n] = '0';
 	else
