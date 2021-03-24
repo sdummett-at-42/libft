@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 00:31:55 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/23 15:55:26 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/24 18:33:10 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	ft_putnbr_fd(int n, int fd)
 	int	tmp;
 
 	if (n == -2147483648)
+	{
 		write(fd, "-2147483648", 11);
+		return ;
+	}
 	if (n < 0)
 	{
 		write(fd, "-", 1);
