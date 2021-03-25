@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 19:29:53 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/23 15:59:50 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/25 10:22:34 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*str;
 	unsigned int	len;
 
+	if (!s1)
+		return (0);
 	len = len_of_str(s1, set);
 	str = malloc(sizeof(char) * len + 1);
 	if (!str)

@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:35:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/23 15:57:22 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/25 09:54:41 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		i;
 	char	*joined_str;
 
+	if (!(s1 && s2))
+		return (0);
 	joined_str = malloc(sizeof(char) * sizeof_s1_s2(s1, s2) + 1);
 	if (!joined_str)
 		return (0);
