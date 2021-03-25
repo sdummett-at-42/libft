@@ -6,9 +6,15 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 14:41:18 by sdummett          #+#    #+#              #
-#    Updated: 2021/03/25 16:04:29 by sdummett         ###   ########.fr        #
+#    Updated: 2021/03/25 18:24:27 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# ************************************ #
+#                                      #
+#              VARIABLES               #
+#                                      #
+# ************************************ #
 
 CC = 		gcc 
 AR = 		ar
@@ -31,8 +37,6 @@ SRC =		ft_strlen.c \
 			ft_strlcat.c \
 			ft_itoa.c \
 			ft_strnstr.c \
-			ft_isupper.c \
-			ft_islower.c \
 			ft_strjoin.c \
 			ft_split.c \
 			ft_memcpy.c \
@@ -50,7 +54,9 @@ SRC =		ft_strlen.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c
+			ft_putnbr_fd.c \
+			ft_isupper_bonus.c \
+			ft_islower_bonus.c 
 SRCBONUS =	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
@@ -59,9 +65,16 @@ SRCBONUS =	ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c 
+			ft_lstmap.c
+
 OBJ = $(SRC:.c=.o)
 OBJBONUS = $(SRCBONUS:.c=.o)
+
+# ************************************ #
+#                                      #
+#                RULES                 #
+#                                      #
+# ************************************ #
 
 all: $(NAME)
 
@@ -72,7 +85,7 @@ bonus: $(OBJBONUS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
 
 %.o: %.c
-	$(CC)  -o $@ $< $(CFLAGS)
+	$(CC) $(CFLAGS) -o $@ $<
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRC)
 	$(CC) -shared -o libft.so $(OBJ)
