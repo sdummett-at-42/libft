@@ -6,7 +6,7 @@
 #    By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/09 14:41:18 by sdummett          #+#    #+#              #
-#    Updated: 2021/03/25 09:42:30 by sdummett         ###   ########.fr        #
+#    Updated: 2021/03/25 16:04:29 by sdummett         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,8 +50,8 @@ SRC =		ft_strlen.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
-			ft_lstnew.c \
+			ft_putnbr_fd.c
+SRCBONUS =	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -61,23 +61,24 @@ SRC =		ft_strlen.c \
 			ft_lstiter.c \
 			ft_lstmap.c 
 OBJ = $(SRC:.c=.o)
+OBJBONUS = $(SRCBONUS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
+bonus: $(OBJBONUS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJBONUS)
+
 %.o: %.c
 	$(CC)  -o $@ $< $(CFLAGS)
-
-#bonus:
-
 so:
 	$(CC) -fPIC $(CFLAGS) $(SRC)
 	$(CC) -shared -o libft.so $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJBONUS)
 	rm -f libft.so
 
 fclean: clean
