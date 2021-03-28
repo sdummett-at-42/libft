@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 12:48:11 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/23 15:59:15 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/28 19:34:12 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_occurrences(const char *big, const char *little, size_t len)
+static int	check_occurrences(const char *big, const char *little, size_t len)
 {
 	while (*little)
 	{

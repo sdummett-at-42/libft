@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 19:29:53 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/25 10:22:34 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/28 19:33:36 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_charset(unsigned char ch, char const *set)
+static int	check_charset(unsigned char ch, char const *set)
 {
 	while (*set)
 	{
@@ -23,7 +23,7 @@ int	check_charset(unsigned char ch, char const *set)
 	return (0);
 }
 
-size_t	len_of_str(char const *s1, char const *set)
+static size_t	len_of_str(char const *s1, char const *set)
 {
 	int	len;
 

@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:35:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/25 09:54:41 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/28 19:34:43 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	sizeof_s1_s2(char const *s1, char const *s2)
+static int	sizeof_s1_s2(char const *s1, char const *s2)
 {
 	int	size;
 

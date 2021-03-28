@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 10:37:47 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/24 11:03:13 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/28 19:36:18 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-int	sizeof_n(int n)
+static int	sizeof_n(int n)
 {
 	int				size;
 	unsigned int	tmp;
@@ -40,7 +40,7 @@ int	sizeof_n(int n)
 	return (size);
 }
 
-char	*protected_malloc(char *str, int size_n)
+static char	*protected_malloc(char *str, int size_n)
 {
 	str = malloc(sizeof(char) * size_n + 1);
 	if (!str)
@@ -49,7 +49,7 @@ char	*protected_malloc(char *str, int size_n)
 	return (str);
 }
 
-void	inttoascii(char *str, long int tmp, int size_n)
+static void	inttoascii(char *str, long int tmp, int size_n)
 {
 	if (tmp < 0)
 	{

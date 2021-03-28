@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:52:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/24 17:50:34 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/03/28 19:35:17 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	clearmem(char **strs, int j)
+static void	clearmem(char **strs, int j)
 {
 	while (j)
 	{
@@ -22,7 +22,7 @@ void	clearmem(char **strs, int j)
 	free(strs);
 }
 
-size_t	size_strs(char const *s, char c)
+static size_t	size_strs(char const *s, char c)
 {
 	size_t	size;
 
@@ -50,7 +50,7 @@ size_t	size_strs(char const *s, char c)
 		return (0);
 }
 
-char const	*splitcpy(char **strs, char const *s, char c, int j)
+static char const	*splitcpy(char **strs, char const *s, char c, int j)
 {
 	unsigned int	i;
 	unsigned int	len;
