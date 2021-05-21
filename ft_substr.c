@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:45:28 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/25 09:46:06 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/05/21 19:14:53 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ptr);
 	}
 	else
-		return (calloc(1, sizeof(char)));
+		return (ft_calloc(1, sizeof(char)));
 }

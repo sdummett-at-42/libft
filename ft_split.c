@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 18:52:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/28 19:35:17 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/05/21 19:14:02 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static char const	*splitcpy(char **strs, char const *s, char c, int j)
 	len = 0;
 	while (!(s[len] == c) && s[len])
 		len++;
-	strs[j] = calloc(len + 1, sizeof(char));
+	strs[j] = ft_calloc(len + 1, sizeof(char));
 	if (!strs[j])
 	{
 		clearmem(strs, j);
