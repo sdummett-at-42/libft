@@ -6,7 +6,7 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 10:44:57 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/24 15:43:57 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/05/21 19:55:44 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_strchr(const char *str, int ch);
 char	*ft_strrchr(const char *str, int ch);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
-size_t	ft_strlcat(char *dest, char *src, unsigned int size);
+size_t	ft_strlcat(char *dest, const char *src, unsigned int size);
 char	*ft_itoa(int n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
