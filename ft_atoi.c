@@ -6,13 +6,13 @@
 /*   By: sdummett <sdummett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 11:24:21 by sdummett          #+#    #+#             */
-/*   Updated: 2021/03/23 16:01:45 by sdummett         ###   ########.fr       */
+/*   Updated: 2021/07/07 01:19:11 by sdummett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)	
+int	ft_atoi(const char *str)
 {
 	int		sign;
 	long	nb;
