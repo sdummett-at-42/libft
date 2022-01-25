@@ -1,4 +1,4 @@
-# Welcome to libft 👋
+# Welcome to libft
 
 > This project aims to code a C library regrouping usual functions.
 
@@ -25,11 +25,3 @@ clang main.c libft.a
 👤 **Stone**
 
 * Github: [@sdummett](https://github.com/sdummett)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
