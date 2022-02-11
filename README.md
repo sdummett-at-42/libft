@@ -5,19 +5,20 @@
 ## Install
 
 ```sh
-make libft.a
+git clone git@github.com:sdummett/libft.git && cd libft && make
 ```
+Then libft.a library is created.
 
 ## Usage
 
+You can use the library while you are compiling your source files.
+Example:
 ```sh
-Add libft.a while your are compiling your source files.
+gcc main.c libft.a
 ```
-
-## Run tests
-
+Or
 ```sh
-clang main.c libft.a
+gcc main.o libft.a
 ```
 
 ## Author
